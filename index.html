@@ -273,13 +273,14 @@
   .loc-facts li{display:flex; gap:14px; align-items:flex-start; font-size:0.98rem;}
   .loc-facts .k{font-weight:700; color:var(--ember); min-width:96px;}
   .map-box{
-    border:1px solid rgba(244,238,224,0.22); border-radius:6px; padding:30px;
+    border:1px solid rgba(244,238,224,0.22); border-radius:6px; padding:0; overflow:hidden;
     background:rgba(12,15,10,0.35);
   }
   .socials{display:flex; gap:14px; margin-top:24px;}
   .social-pill{
-    border:1px solid rgba(244,238,224,0.3); border-radius:30px; padding:9px 16px;
-    font-size:0.85rem; font-weight:700; text-decoration:none; color:var(--cream);
+    border:1px solid rgba(244,238,224,0.3); border-radius:50%; width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    color:var(--cream);
     transition:background .2s, color .2s;
   }
   .social-pill:hover{background:var(--ember); color:#1b1206; border-color:var(--ember);}
@@ -532,33 +533,19 @@
           <li><span class="k">Online</span><span>@suyaexpress_tz on Instagram &amp; TikTok · @suyaexpresstz on Facebook</span></li>
         </ul>
         <div class="socials">
-          <a class="social-pill" href="https://instagram.com/suyaexpress_tz" target="_blank" rel="noopener">Instagram</a>
-          <a class="social-pill" href="https://facebook.com/suyaexpresstz" target="_blank" rel="noopener">Facebook</a>
-          <a class="social-pill" href="https://tiktok.com/@suyaexpress_tz" target="_blank" rel="noopener">TikTok</a>
+          <a class="social-pill" href="https://instagram.com/suyaexpress_tz" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a class="social-pill" href="https://facebook.com/suyaexpresstz" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a class="social-pill" href="https://tiktok.com/@suyaexpress_tz" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.53.02C13.84 0 15.14.01 16.44.06c1.15.52 1.8 1.48 2.22 2.65.17.48.24 1.01.27 1.52.01.29.02.58.02.87 0 0-2.31 0-2.31 0-.02-.8-.22-1.54-.7-2.15-.38-.48-.91-.77-1.5-.94v11.13c-.02 1.94-.78 3.52-2.3 4.54-1.39.93-3.15 1.1-4.73.47-1.46-.57-2.5-1.63-2.93-3.13-.37-1.3-.17-2.58.55-3.71.69-1.09 1.77-1.74 3.08-1.92.51-.07 1.01-.06 1.5.06v2.33c-.34-.09-.69-.11-1.04-.04-.84.15-1.47.74-1.65 1.57-.15.7.13 1.34.69 1.77.67.51 1.63.49 2.27-.04.48-.41.74-1 .73-1.63V.02h.01z" /></svg>
+          </a>
         </div>
       </div>
       <div class="map-box">
-        <svg viewBox="0 0 320 260" width="100%" height="auto" role="img" aria-label="Map pin illustration for Morocco Square Food Court">
-          <defs>
-            <radialGradient id="glow" cx="50%" cy="35%" r="65%">
-              <stop offset="0%" stop-color="#d99a3f" stop-opacity="0.35"/>
-              <stop offset="100%" stop-color="#d99a3f" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-          <rect x="0" y="0" width="320" height="260" fill="url(#glow)"/>
-          <g stroke="rgba(244,238,224,0.35)" stroke-width="1">
-            <line x1="20" y1="40" x2="300" y2="40"/>
-            <line x1="20" y1="90" x2="300" y2="90"/>
-            <line x1="20" y1="140" x2="300" y2="140"/>
-            <line x1="20" y1="190" x2="300" y2="190"/>
-            <line x1="60" y1="20" x2="60" y2="230"/>
-            <line x1="140" y1="20" x2="140" y2="230"/>
-            <line x1="220" y1="20" x2="220" y2="230"/>
-          </g>
-          <circle cx="160" cy="110" r="44" fill="none" stroke="#d99a3f" stroke-width="1.5" stroke-dasharray="3 5"/>
-          <path d="M160 60c-24 0-42 18-42 41 0 30 42 74 42 74s42-44 42-74c0-23-18-41-42-41z" fill="#0f3626" stroke="#d99a3f" stroke-width="2.5"/>
-          <circle cx="160" cy="99" r="14" fill="#f4eee0"/>
-        </svg>
+        <iframe src="https://maps.google.com/maps?q=Morocco%20Square,%20Dar%20es%20Salaam&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0; min-height: 350px; display: block;" allowfullscreen="" loading="lazy"></iframe>
       </div>
     </div>
     <footer>
