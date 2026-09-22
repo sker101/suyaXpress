@@ -52,21 +52,28 @@
     max-width:1180px; margin:0 auto;
   }
   .wordmark{
-    font-family:'Fraunces',serif; font-weight:700; font-size:1.25rem;
-    letter-spacing:0.01em;
-    color:var(--cream);
     text-decoration:none;
-    display:flex; align-items:baseline; gap:6px;
+    display:flex; align-items:center;
   }
-  .wordmark span{color:var(--ember);}
+  /* Shared logo filter — converts dark-green logo to cream on dark bg */
+  .site-logo, .footer-logo {
+    filter: brightness(0) invert(1) sepia(0.15) hue-rotate(10deg) saturate(0.9) opacity(0.88);
+    transition: opacity 0.25s, transform 0.25s;
+    display: block;
+  }
+  .site-logo {
+    height: 46px;
+    width: auto;
+  }
+  .wordmark:hover .site-logo {
+    transform: scale(1.04);
+    filter: brightness(0) invert(1) sepia(0.15) hue-rotate(10deg) saturate(0.9) opacity(1);
+  }
   .footer-logo {
     height: 110px;
     width: auto;
-    /* Invert dark green to cream to blend with dark background */
-    filter: brightness(0) invert(1) sepia(0.15) hue-rotate(10deg) saturate(0.9) opacity(0.85);
-    transition: opacity 0.25s, transform 0.25s;
-    display: block;
     margin: 0 auto;
+    opacity: 0.88;
   }
   .footer-logo:hover {
     opacity: 1;
@@ -323,7 +330,9 @@
 
 <header class="site-nav">
   <div class="nav-inner">
-    <a href="#top" class="wordmark">SUYA<span>EX</span>PRESS</a>
+    <a href="#top" class="wordmark" aria-label="Suya Express — Home">
+      <img src="logo.png" alt="Suya Express" class="site-logo">
+    </a>
     <nav class="links">
       <a href="#chef">The Chef</a>
       <a href="#menu">Daily Menu</a>
