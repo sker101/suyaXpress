@@ -52,13 +52,37 @@
     max-width:1180px; margin:0 auto;
   }
   .wordmark{
-    font-family:'Fraunces',serif; font-weight:700; font-size:1.25rem;
-    letter-spacing:0.01em;
-    color:var(--cream);
     text-decoration:none;
-    display:flex; align-items:baseline; gap:6px;
+    display:flex; align-items:center;
   }
-  .wordmark span{color:var(--ember);}
+  .site-logo {
+    height: 54px;
+    width: auto;
+    /* Make the dark logo match the cream theme */
+    filter: brightness(0) invert(0.95) sepia(0.08) hue-rotate(346deg) saturate(1.4);
+    transition: transform 0.2s;
+  }
+  .wordmark:hover .site-logo {
+    transform: scale(1.03);
+  }
+  .footer-logo {
+    height: 80px;
+    width: auto;
+    filter: brightness(0) invert(0.95) sepia(0.08) hue-rotate(346deg) saturate(1.4);
+    opacity: 0.7;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .footer-logo:hover {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+  .footer-logo-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
   nav.links{display:flex; gap:28px; font-size:0.92rem; font-weight:600;}
   nav.links a{text-decoration:none; color:var(--cream-2); border-bottom:1px solid transparent; padding-bottom:3px; transition:border-color .2s, color .2s;}
   nav.links a:hover{color:var(--ember); border-color:var(--ember);}
@@ -301,7 +325,9 @@
 
 <header class="site-nav">
   <div class="nav-inner">
-    <a href="#top" class="wordmark">SUYA<span>EX</span>PRESS</a>
+    <a href="#top" class="wordmark" aria-label="Suya Express">
+      <img src="logo.png" alt="Suya Express Logo" class="site-logo">
+    </a>
     <nav class="links">
       <a href="#chef">The Chef</a>
       <a href="#menu">Daily Menu</a>
@@ -550,8 +576,15 @@
     </div>
     <footer>
       <div class="wrap footer-inner">
-        <span>Suya Express — West African Flavours × East African Soul</span>
-        <span>Good food travels further.</span>
+        <div class="footer-logo-wrap">
+          <a href="#top" aria-label="Back to top">
+            <img src="logo.png" alt="Suya Express Logo" class="footer-logo">
+          </a>
+        </div>
+        <div style="width:100%; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom: 24px;">
+          <span>Suya Express — West African Flavours × East African Soul</span>
+          <span>Good food travels further.</span>
+        </div>
       </div>
     </footer>
   </section>
