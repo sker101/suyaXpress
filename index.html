@@ -565,15 +565,21 @@
     }
 
     .day-photo {
-      border-radius: 6px;
+      border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 22px 44px rgba(36, 31, 22, 0.18);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .day-photo:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 28px 56px rgba(36, 31, 22, 0.25);
     }
 
     .day-photo img {
       width: 100%;
       height: auto;
-      aspect-ratio: 2/3;
+      display: block;
       object-fit: cover;
     }
 
@@ -929,14 +935,6 @@
           </div>
           <p class="section-desc">Fresh flavours, great days. A new plate every weekday, each with two ways to have it —
             and a complimentary mini juice on the side.</p>
-          <div style="margin-top:18px; display:flex; align-items:center; gap:14px;">
-            <a href="#menu"
-              style="display:inline-block; background:#fff; padding:6px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.10);">
-              <img src="menu-qrcode.png" alt="Scan to view menu" style="width:90px; height:90px; display:block;">
-            </a>
-            <span style="font-size:0.85rem; color:#8a8172; max-width:180px;">Scan the QR code to jump straight to our
-              weekly menu.</span>
-          </div>
         </div>
 
         <div class="day-tabs" role="tablist" aria-label="Choose a day">
