@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "source": "/menu",
+      "destination": "/#menu",
+      "permanent": true
+    },
+    {
+      "source": "/menu.html",
+      "destination": "/#menu",
+      "permanent": true
+    },
+    {
+      "source": "/qr",
+      "destination": "/#menu",
+      "permanent": true
+    }
+  ]
+}
